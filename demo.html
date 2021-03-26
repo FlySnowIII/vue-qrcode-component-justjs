@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <title>Demo</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./lib/bootstrap-4.5.0-dist/css/bootstrap.min.css">
+    <script src="./lib/jquery-3.5.1.min.js"></script>
+    <script src="./lib/bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <main id="vueapp" class="pb-5" :class="bgcolor">
+        <div class="form-group">
+            <label for="">QR URL</label>
+            <input type="text" class="form-control" v-model="qrurl">
+        </div>
+        <button type="button" class="btn btn-primary" @click="btnqrmakeclick()">Click to Change</button>
+        <hr>
+        <div class="py-4">
+            <div class="container">
+                <div class="row py-2">
+                    <div class="col-2">
+                        <vue-qrcode :text="qrurl"></vue-qrcode>
+                    </div>
+                </div>
+                <div class="row py-4" >
+                    <div class="col-3" v-for="(item, index) in qrurllist" :key="index">
+                        <vue-qrcode :text="item.url"></vue-qrcode>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <!-- Vue.js -->
+    <script src="./lib/vue.js"></script>
+    <!-- QR -->
+    <script src="./lib/qrcode.min.js"></script>
+    <script src="./lib/vueplugin/vue-qrcode.js"></script>
+
+
+    <!-- Main Javascript -->
+    <script>
+        var vueapp = new Vue({
+            el: '#vueapp',
+            data() {
+                return {
+                    bgcolor:'gray',
+                    qrurl:'https://www.azest.co.jp/',
+                    qrurllist:[
+                        {url:'https://www.yahoo.co.jp/'},
+                        {url:'https://www.google.com/'},
+                    ],
+                }
+            },
+        });
+    </script>
+</body>
