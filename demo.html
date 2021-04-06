@@ -24,16 +24,20 @@
         <hr>
         <div class="py-4">
             <div class="container">
-                <div class="row py-2">
+                <!-- <div class="row py-2">
                     <div class="col-2">
-                        <vue-qrcode :text="qrurl"></vue-qrcode>
+                        <vue-qrcode text="https://l-pokect.web.app/r.html?i=K&d=a&=A"></vue-qrcode>
                     </div>
-                </div>
-                <div class="row py-4" >
-                    <div class="col-3" v-for="(item, index) in qrurllist" :key="index">
+                </div> -->
+                <div class="row py-4" v-for="(item, index) in qrurllist" >
+                    <div class="col-3">
                         <vue-qrcode :text="item.url"></vue-qrcode>
                     </div>
+                    <div class="col-12">
+                        {{item.mykey}}
+                    </div>
                 </div>
+
             </div>
         </div>
 
@@ -52,13 +56,31 @@
             data() {
                 return {
                     bgcolor:'gray',
-                    qrurl:'https://www.azest.co.jp/',
                     qrurllist:[
-                        {url:'https://www.yahoo.co.jp/'},
-                        {url:'https://www.google.com/'},
+                        {url:'https://l-ppp/o.html?i=i',mykey:'_INPLUS',},
+                        {url:'https://l-ppp/o.html?i=k',mykey:'_PLUSKT',},
+                        {url:'https://l-ppp/o.html?i=a',mykey:'_PLUSAB',},
+                        {url:'https://l-ppp/o.html?i=p',mykey:'_KPINP',},
+                        {url:'https://l-ppp/o.html?i=c',mykey:'_KPECO',},
+                        {url:'https://l-ppp/o.html?i=r',mykey:'_KPRES',},
+                        {url:'https://l-ppp/o.html?i=w',mykey:'_KPWSH',},
+                        {url:'https://l-ppp/o.html?i=t',mykey:'_TOILETINPULS',},
+                        {url:'https://l-ppp/o.html?i=d',mykey:'_WOODDECKPLUSONE',},
                     ],
+                    mykey:{
+                        'i':'_INPLUS',
+                        'k':'_PLUSKT',
+                        'a':'_PLUSAB',
+                        'p':'_KPINP',
+                        'c':'_KPECO',
+                        'r':'_KPRES',
+                        'w':'_KPWSH',
+                        't':'_TOILETINPULS',
+                        'd':'_WOODDECKPLUSONE',
+                        },
                 }
             },
         });
     </script>
 </body>
+
